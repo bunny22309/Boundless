@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+body, html {
+    overflow: auto;
+}
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: #2a3b35; /* Deep muted green */
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 100;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 400px;
+}
+.logo img {
+    max-height: 80px;
+}
+.navigation a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #d5bfa8; /* Light tan for navigation links */
+    font-weight: 600;
+    padding: 6px 15px;
+    border-radius: 20px;
+}
+.navigation a:hover,
+.navigation a.active {
+    background-color: #d5bfa8; /* Light tan hover background */
+    color: #5a3e26; /* Dark brown hover text color */
+}
+
+/* New styles for Find Your City section */
+.find-your-city-section {
+    padding: 60px 100px;
+    margin-top: 40px;
+}
+
+.title-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.title-section h2 {
+    font-size: 3.6rem; /* Title size */
+    color: #d5bfa8; /* Light tan for the title */
+    font-weight: 700;
+    margin-top: 40px;
+}
+
+.title-section h2:hover {
+    color: #ffdd57; /* Yellow color on hover */
+}
+
+.circle-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.circle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 30%; /* Ensures 3 items per row */
+    max-width: 30%;
+}
+
+.circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 3px solid #d5bfa8; /* Light tan border */
+}
+
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.circle:hover {
+    transform: scale(1.1);
+}
+
+.hover-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(90, 62, 38, 0.8); /* Dark brown background */
+    color: #d5bfa8; /* Light tan text color */
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.circle:hover .hover-content {
+    opacity: 1;
+}
+
+.circle-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px; /* Added gap between circle containers */
+    margin-bottom: 20px; /* Added margin between rows */
+}
+
+.circle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px; /* Added margin for spacing */
+}
+
+.city-button {
+    display: flex;
+    flex-direction: column; /* Stack the city name and WhatsApp icon vertically */
+    justify-content: center;
+    align-items: center;
+    background-color: #5a3e26; /* Dark brown for the button */
+    color: #d5bfa8; /* Light tan text color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    font-size: 18px; /* Font size for the city name */
+}
+
+.city-button p {
+    margin: 0; /* Removes default margin */
+    font-weight: bold;
+    color: #d2a7a7;
+}
+
+.city-button a {
+    color: #25D366; /* WhatsApp brand color */
+    font-size: 30px; /* Increased size for the WhatsApp icon */
+    margin-top: 5px; /* Space between the city name and the icon */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.city-button a:hover {
+    color: #128C7E; /* Darker shade of WhatsApp color on hover */
+}
+
+
+.city-button a:hover {
+    color: #ffcc00; /* Slightly darker yellow on hover */
+}
+
+.city-button:hover {
+    background-color: #4a3220; /* Darker shade of brown on hover */
+}
+
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .circle-container {
+        max-width: 45%; /* Adjust to fit 2 items per row on smaller screens */
+        flex: 1 1 45%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .circle-container {
+        max-width: 100%; /* 1 item per row on very small screens */
+        flex: 1 1 100%;
+    }
+}
